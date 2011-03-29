@@ -1,0 +1,60 @@
+body, td, th {
+  font: medium helvetica, verdana, arial, sans-serif;
+  vertical-align: top;
+  margin: 2em;
+  padding: 2em;
+  border: 1px solid #ccc;
+}
+
+body {
+  background: #fff;
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  border-bottom: 2px solid #000;
+}
+
+h3 {
+  border-bottom: 1px solid #000;
+}
+
+h4 {
+  border-bottom: 1px solid #aaa;
+}
+
+h5 {
+  border-bottom: 1px dashed #ccc;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+pre {
+	font-size: 1.2em;
+	margin-left: 2em;
+	background: #ddd;
+    padding: 1em;
+    border: 1px dashed #aaa;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: 0.5em;
+}
