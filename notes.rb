@@ -1,5 +1,12 @@
-require 'sinatra'
+require "sinatra"
+require "rdiscount"
+
+set :markdown, :layout_engine => :erb
 
 get '/' do
-  "This is the index!"
+  markdown :index
+end
+
+get '/site' do
+  markdown :site
 end
