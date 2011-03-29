@@ -93,9 +93,9 @@ Heroku uses Git as its version control system, so we need to set our app as a Gi
 
 ## Heroku
 
-You'll need to visit the [Herokuy Signup](http://api.heroku.com/signup) to create an account if you don't already have one. You'll also need to set up a public SSH Key and upload it to Heroku. There are instructions for creating SSH keys on GitHub for [Mac](http://help.github.com/mac-set-up-git/), [Windows](http://help.github.com/win-set-up-git/) and [Linux](http://help.github.com/linux-set-up-git/).
+You'll need to visit the [Heroku Signup](http://api.heroku.com/signup) to create an account if you don't already have one. You'll also need to set up a public SSH Key and upload it to Heroku. There are instructions for creating SSH keys on GitHub for [Mac](http://help.github.com/mac-set-up-git/), [Windows](http://help.github.com/win-set-up-git/) and [Linux](http://help.github.com/linux-set-up-git/).
 
-Once you've done that you'll want to isntall the Heroku Gem
+Once you've done that you'll want to install the Heroku Gem
 
 	gem install heroku
 

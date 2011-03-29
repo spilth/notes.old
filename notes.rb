@@ -7,6 +7,6 @@ get '/' do
   markdown :index
 end
 
-get '/site' do
-  markdown :site
+get '/:topic' do
+  markdown params[:topic].to_sym
 end
