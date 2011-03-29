@@ -1,5 +1,6 @@
 require "sinatra"
 require "rdiscount"
+require "erb"
 
 set :markdown, :layout_engine => :erb
 set :erb, :layout => "text"
