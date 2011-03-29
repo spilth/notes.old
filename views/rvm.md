@@ -10,7 +10,7 @@ To install RVM use the following command:
 
 Edit your `~/.profile` and add the following
 
-	[[ -s "/Users/bkelly1271/.rvm/scripts/rvm" ]] && source "/Users/bkelly1271/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+	[[ -s "/Users/brian/.rvm/scripts/rvm" ]] && source "/Users/brian/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 Then reload your `~/.profile` for the changes to take effect
 

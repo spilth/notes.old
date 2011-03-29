@@ -1,5 +1,8 @@
 # Build & Deploy Notes
 
-* [This Site](/site) - How this site is generate and hosted
-* [Ruby Version Manager (RVM)](/rvm)
+This site is a collection of notes I've take about various technologies.
+
+* [About This Site](/site) - How this site is generate and hosted
+* [R](/r)
+* [RVM (Ruby Version Manager)](/rvm)
 * [Vagrant and Puppet](/vagrant-puppet)
