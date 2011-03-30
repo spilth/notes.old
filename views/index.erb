@@ -1,0 +1,11 @@
+<h1>Build & Deploy Notes</h1>
+
+<p>This site is a collection of notes I've take about various technologies. Each note is a Markdown file converted to HTML</p>
+
+<h2>Topics</h2>
+
+<ul>
+<% @topics.each do |topic| %>
+  <li><a href="/<%= topic %>"><%= topic %></a></li>
+<% end %>
+</ul>

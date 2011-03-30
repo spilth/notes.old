@@ -1,17 +1,31 @@
-require "sinatra"
-require "rdiscount"
-require "erb"
+require 'sinatra'
+require 'rdiscount'
+require 'erb'
 
 set :markdown, :layout_engine => :erb
 
 get '/' do
-  markdown :index
+  @topics = nil
+
+  Dir.chdir(File.dirname(__FILE__) + "/views/") do
+    @topics = Dir.glob("*.md")  
+  end
+
+  @topics.reject! {|entry| entry == "index.md"}
+  @topics.collect! {|entry| entry.split(".")[0]}
+
+  erb :index
+end
+
+get '/source' do
+  redirect to('/index/source')
 end
 
 get '/:topic' do
+  @topic = params[:topic]
   markdown params[:topic].to_sym
 end
 
-get '/:topic/markdown' do
-  erb params[:topic].to_sym
+get '/:topic/source' do
+  send_file File.dirname(__FILE__) + "/views/#{params[:topic]}.md", :type => :text
 end
