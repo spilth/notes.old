@@ -13,7 +13,8 @@ get '/' do
 
   @topics.reject! {|entry| entry == "index.md"}
   @topics.collect! {|entry| entry.split(".")[0]}
-
+  @topics.sort!
+  
   erb :index
 end
 
