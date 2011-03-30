@@ -44,11 +44,22 @@ blockquote {
 }
 
 pre {
-	font-size: 1.2em;
-	margin-left: 2em;
-	background: #ddd;
-    padding: 1em;
-    border: 1px dashed #aaa;
+	background: #eee;
+    border: 1px solid #ccc;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	overflow: auto; /*--If the Code exceeds the width, a scrolling is available--*/
+	overflow-Y: hidden;  /*--Hides vertical scroll created by IE--*/
+}
+
+code {
+	font-size: 1.3em;
+}
+
+pre code {
+	padding: 1em;
+	display: block;
 }
 
 dt {
