@@ -26,20 +26,38 @@ These instructions assume you have already installed the following:
 Use the follwing as the contents of notes.rb
 
 	require 'sinatra'
+	require 'rdiscount'
+	require 'erb'
+
+	set :markdown, :layout_engine => :erb
 
 	get '/' do
-  		"This is the index!"
+	  @topics = nil
+
+	  Dir.chdir(File.dirname(__FILE__) + "/views/") do
+	    @topics = Dir.glob("*.md")  
+	  end
+
+	  @topics.reject! {|entry| entry == "index.md"}
+	  @topics.collect! {|entry| entry.split(".")[0]}
+
+	  erb :index
 	end
 
-When you're done, try out your app:
+	get '/source' do
+	  redirect to('/index/source')
+	end
 
-	$ ruby -rubygems notes.rb
+	get '/:topic' do
+	  @topic = params[:topic]
+	  markdown params[:topic].to_sym
+	end
 
-It will now be running on http://localhost:4567/
+	get '/:topic/source' do
+	  send_file File.dirname(__FILE__) + "/views/#{params[:topic]}.md", :type => :text
+	end
 
-For more information check out [Getting Started with Sinatra](http://www.sinatrarb.com/intro) and the [Sinatra Documentation](http://www.sinatrarb.com/documentation).
-
-## Markdown
+## Markdown Support
 
 > Markdown is a text-to-HTML conversion tool for web writers. Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML).
 
@@ -59,16 +77,29 @@ Create views, layouts and pages:
 The contents:
 
 	<html>
-
 	  <head>
 		<title>Notes</title>
+		<link rel="stylesheet" type="text/css" href="/css/global.css" />
 	  </head>
 
 	  <body>
+	    <p><a href="/">Home</a><% if (@topic) then %> | <a href="<%= @topic %>/source">Markdown Source</a><% end %></p>
+
 		<%= yield %>
 	  </body>
 
 	</html>
+
+## Giving It A Whirl
+
+When you're done, try out your app:
+
+	$ ruby -rubygems notes.rb
+
+It will now be running on http://localhost:4567/
+
+For more information check out [Getting Started with Sinatra](http://www.sinatrarb.com/intro) and the [Sinatra Documentation](http://www.sinatrarb.com/documentation).
+
 
 ## Rack App
 
