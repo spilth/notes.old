@@ -1,5 +1,5 @@
 body, td, th {
-  font-size: medium;
+  font-size: large;
   font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
   vertical-align: top;
   margin: 1em;
@@ -55,7 +55,7 @@ pre {
 }
 
 code {
-	font-size: 1.3em;
+	font-size: 1.2em;
 }
 
 pre code {
