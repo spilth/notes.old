@@ -1,23 +1,15 @@
 body, td, th {
   font-size: large;
   font-family: "calluna-1","calluna-2", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
-  vertical-align: top;
-  margin: 1em;
-  padding: 1em;
-  border: 1px solid #ccc;
-}
-
-body {
+  width: 800px;
   background: #fff;
   color: #000;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+  border: 1px solid #ccc;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+  vertical-align: top;
 }
 
 h1 {
@@ -42,11 +34,14 @@ h5 {
 
 blockquote {
   font-style: italic;
+  margin: 0;
+  background: #efe;
+  padding: 4px;
 }
 
 pre {
 	background: #eee;
-    border: 1px solid #ccc;
+    border: 1px dashed #ccc;
 	padding: 0;
 	margin: 0;
 	width: 100%;
