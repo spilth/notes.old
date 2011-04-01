@@ -1,8 +1,8 @@
 # How This Site Is Generated and Hosted
 
-This site is a [Sinatra](http://www.sinatrarb.com/) application running at [Heroku](http://heroku.com/). I'm using [Markdown](http://daringfireball.net/projects/markdown/) to create the pages and use [DNSimple](https://dnsimple.com/) to register and manage my domains.
+This site is a [Sinatra](http://www.sinatrarb.com/) application running at [Heroku](http://heroku.com/). I'm using [Markdown](http://daringfireball.net/projects/markdown/) to create my notes and using [DNSimple](https://dnsimple.com/) to register and manage the domain `buildndeploy.com`. The beautiful font is provided by [typekit](http://typekit.com/).
 
-The goal of this app/site is to be able to make notes about various technologies and generate a site that I can reference and quickly update and expand. The process of creating a new markdown file should result in a new page showing up on the site.  Below are instructions for how I set up the site.
+The goal of this app is to be able to make notes about various technologies and generate a web site that I can reference and quickly update and expand. The process of creating a new Markdown file should result in a new page showing up on the site.  Below are instructions for how I set up the site.
 
 ## Pre-Requisites
 
@@ -20,21 +20,20 @@ Use RubyGems to install Sinatra:
 
 	$ gem install sinatra
 
-## Markdown
+## Markdown Support
 
 > Markdown is a text-to-HTML conversion tool for web writers. Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML).
 
-For converting Markdown to HTML in Ruby we'll be using [rdiscount](https://github.com/rtomayko/rdiscount):
+For converting Markdown to HTML in Ruby we'll be using the [rdiscount Gem](https://github.com/rtomayko/rdiscount):
 
-	gem install rdiscount
+	$ gem install rdiscount
 
 ## Create a Sinatra Project
 
 	$ mkdir notes
 	$ cd notes
-	$ mate notes.rb
 
-Use the follwing as the contents of `notes.rb`:
+Create the file `notes.rb` and use the following as the contents:
 
 	require 'sinatra'
 	require 'rdiscount'
@@ -46,11 +45,12 @@ Use the follwing as the contents of `notes.rb`:
 	  @topics = nil
 
 	  Dir.chdir(File.dirname(__FILE__) + "/views/") do
-	    @topics = Dir.glob("*.md")  
+	    @topics = Dir.glob("*.md")
 	  end
 
 	  @topics.reject! {|entry| entry == "index.md"}
 	  @topics.collect! {|entry| entry.split(".")[0]}
+	  @topics.sort!
 
 	  erb :index
 	end
@@ -68,30 +68,62 @@ Use the follwing as the contents of `notes.rb`:
 	  send_file File.dirname(__FILE__) + "/views/#{params[:topic]}.md", :type => :text
 	end
 
-Now you can create files with the `.md` extension in the `views` directory of your project.
+## Making A Page
 
-## Making It Pretty
-
-Create views, layouts and pages:
+Be default Sinatra looks for templates inside of a `views` directory in your project.
 
 	$ mkdir views
-	$ mate views/layout.erb
 
-The contents:
+Now create a file named `about.md` inside of `views` with the following contents:
+
+	# How This Site Is Generated and Hosted
+
+	This site is a [Sinatra](http://www.sinatrarb.com/) application running at [Heroku](http://heroku.com/). I'm using [Markdown](http://daringfireball.net/projects/markdown/) to create my notes and using [DNSimple](https://dnsimple.com/) to register and manage the domain `buildndeploy.com`. The beautiful font is provided by [typekit](http://typekit.com/).
+
+	The goal of this app is to be able to make notes about various technologies and generate a web site that I can reference and quickly update and expand. The process of creating a new Markdown file should result in a new page showing up on the site.  Below are instructions for how I set up the site.
+	
+	## Pre-Requisites
+
+	These instructions assume you have already installed the following:
+
+	* [Ruby](http://www.ruby-lang.org/en/)
+	* [RubyGems](http://rubygems.org/)
+	* [Git](http://git-scm.com/)
+	
+I think you get the idea...
+
+## Providing a Page Layout
+
+Inside the `views` directory we'll also create `layout.erb` which all our Markdown pages will be inserted into. Here are the contents:
 
 	<html>
 	  <head>
 		<title>Notes</title>
-		<link rel="stylesheet" type="text/css" href="/css/global.css" />
 	  </head>
 
 	  <body>
-	    <p><a href="/">Home</a><% if (@topic) then %> | <a href="<%= @topic %>/source">Markdown Source</a><% end %></p>
+	    <p><a href="/">Home</a><% if (@topic) then %> | <a href="<%= @topic %>/source">View Markdown Source</a><% end %></p>
 
 		<%= yield %>
 	  </body>
 
 	</html>
+
+Pretty CSS is left as an exercise to the reader.
+
+## The Home Page
+
+One more file for the `views` directory. This one is named `index.erb`. We want to do a little Ruby coding and we can't do that with a Markdown file:
+
+	<h1>My Notes</h1>
+
+	<h2>Contents</h2>
+
+	<ul>
+	<% @topics.each do |topic| %>
+	  <li><a href="/<%= topic %>"><%= topic %></a></li>
+	<% end %>
+	</ul>
 
 ## Giving It A Whirl
 
@@ -99,14 +131,15 @@ When you're done, try out your app:
 
 	$ ruby -rubygems notes.rb
 
-It will now be running on http://localhost:4567/
+It will now be running on http://localhost:4567/ and you should see a link to your "about" page under Contents.
 
-For more information check out [Getting Started with Sinatra](http://www.sinatrarb.com/intro) and the [Sinatra Documentation](http://www.sinatrarb.com/documentation).
+For more information about Sinatra check out [Getting Started with Sinatra](http://www.sinatrarb.com/intro) and the [Sinatra Documentation](http://www.sinatrarb.com/documentation).
 
+Check the [Markdown:Syntax](http://daringfireball.net/projects/markdown/syntax) page for information on how to format your documents.
 
 ## Rack App
 
-We're going to be using Heroku to host our application which means we need to provide a few things to help it understand our projects dependencies and how to start it up.
+We're going to be using Heroku to host our application which means we need to provide a few things to help it understand our projects dependencies and how to start it up as a [Rack application](http://rack.rubyforge.org/).
 
 First we need to create a `.gems` file which contains the Gems our project requires. We only need to tell it about Sinatra:
 
