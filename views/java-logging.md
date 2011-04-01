@@ -96,8 +96,6 @@ Java Class:
 
 #### Example
 
-	package org.spilth.examples;
-
 	import org.apache.commons.logging.Log;
 	import org.apache.commons.logging.LogFactory;
 

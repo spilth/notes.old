@@ -1,10 +1,8 @@
-# How This Site Is Generate and Hosted
+# How This Site Is Generated and Hosted
 
 This site is a [Sinatra](http://www.sinatrarb.com/) application running at [Heroku](http://heroku.com/). I'm using [Markdown](http://daringfireball.net/projects/markdown/) to create the pages and use [DNSimple](https://dnsimple.com/) to register and manage my domains.
 
-The goal of this app/site is to be able to make notes about various technologies and generate a site that I can reference and quickly update and expand. The process of creating a new markdown file should result in a new page showing up on the site.
-
-Below are instructions for how I set up the site.
+The goal of this app/site is to be able to make notes about various technologies and generate a site that I can reference and quickly update and expand. The process of creating a new markdown file should result in a new page showing up on the site.  Below are instructions for how I set up the site.
 
 ## Pre-Requisites
 
@@ -18,12 +16,25 @@ These instructions assume you have already installed the following:
 
 > Sinatra is a DSL for quickly creating web applications in Ruby with minimal effort.
 
+Use RubyGems to install Sinatra:
+
 	$ gem install sinatra
+
+## Markdown
+
+> Markdown is a text-to-HTML conversion tool for web writers. Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML).
+
+For converting Markdown to HTML in Ruby we'll be using [rdiscount](https://github.com/rtomayko/rdiscount):
+
+	gem install rdiscount
+
+## Create a Sinatra Project
+
 	$ mkdir notes
 	$ cd notes
 	$ mate notes.rb
 
-Use the follwing as the contents of notes.rb
+Use the follwing as the contents of `notes.rb`:
 
 	require 'sinatra'
 	require 'rdiscount'
@@ -56,14 +67,6 @@ Use the follwing as the contents of notes.rb
 	get '/:topic/source' do
 	  send_file File.dirname(__FILE__) + "/views/#{params[:topic]}.md", :type => :text
 	end
-
-## Markdown Support
-
-> Markdown is a text-to-HTML conversion tool for web writers. Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML).
-
-For converting Markdown to HTML in Ruby we'll be using [rdiscount](https://github.com/rtomayko/rdiscount):
-
-	gem install rdiscount
 
 Now you can create files with the `.md` extension in the `views` directory of your project.
 

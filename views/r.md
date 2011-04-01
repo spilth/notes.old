@@ -1,5 +1,7 @@
 # R
 
+> R is a free software environment for statistical computing and graphics.
+
 ## Basics
 
 ### Create a vector of numbers
@@ -169,4 +171,4 @@
 
 ### List all columns of one row in a Frame
 
-Car[1,]
+	Car[1,]

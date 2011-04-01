@@ -8,7 +8,7 @@ get '/' do
   @topics = nil
 
   Dir.chdir(File.dirname(__FILE__) + "/views/") do
-    @topics = Dir.glob("*.md")  
+    @topics = Dir.glob("*.md")
   end
 
   @topics.reject! {|entry| entry == "index.md"}
