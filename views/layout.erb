@@ -20,30 +20,33 @@
   </head>
 
   <body>
-    <p><a href="/">Home</a><% if (@topic) then %> | <a href="<%= @topic %>/source">View Markdown Source</a><% end %></p>
 
-	<%= yield %>
-	
-	<% if (@topic) then %>
-		<h2>Discussion</h2>
-	
-		<p>If you have a question or suggestion, please add a comment below.</p>
-	
-		<div id="disqus_thread"></div>
-		<script type="text/javascript">
-		    var disqus_shortname = 'bndnotes';
-		    var disqus_identifier = '<%= @topic %>';
-		    var disqus_url = 'http://notes.buildndeploy.com/<%= @topic %>';
+	<div id="main">
+	    <p><a href="/">Home</a><% if (@topic) then %> | <a href="<%= @topic %>/source">View Markdown Source</a><% end %></p>
 
-		    (function() {
-		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-		        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-		    })();
-		</script>
-		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-		<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-	<% end %>
+		<%= yield %>
+	
+		<% if (@topic) then %>
+			<h2>Discussion</h2>
+	
+			<p>If you have a question or suggestion, please add a comment below.</p>
+	
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+			    var disqus_shortname = 'bndnotes';
+			    var disqus_identifier = '<%= @topic %>';
+			    var disqus_url = 'http://notes.buildndeploy.com/<%= @topic %>';
+
+			    (function() {
+			        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			    })();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+		<% end %>
+	</div>
   </body>
 
 </html>

@@ -1,14 +1,8 @@
 body, td, th {
   font-size: large;
   font-family: "calluna-1","calluna-2", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
-  width: 800px;
-  background: #fff;
+  background: #eee;
   color: #000;
-  border: 1px solid #ccc;
-  margin: auto;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  padding: 1em;
   vertical-align: top;
 }
 
@@ -40,8 +34,9 @@ blockquote {
 }
 
 pre {
-	background: #eee;
-    border: 1px dashed #ccc;
+	background: #ddd;
+	color: #000;
+    border: 1px dashed #aaa;
 	padding: 0;
 	margin: 0;
 	width: 100%;
@@ -50,7 +45,7 @@ pre {
 }
 
 code {
-	font-size: 1.2em;
+	font-size: 1.0em;
 }
 
 pre code {
@@ -64,4 +59,14 @@ dt {
 
 dd {
   margin-bottom: 0.5em;
+}
+
+#main {
+  width: 800px;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 0 1em;
+  background: #fff;
+  border: 1px solid #ccc;
 }
