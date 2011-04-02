@@ -22,6 +22,10 @@ get '/source' do
   redirect to('/index/source')
 end
 
+get '/favicon.ico' do
+  404
+end
+
 get '/:topic' do
   @topic = params[:topic]
   markdown params[:topic].to_sym
