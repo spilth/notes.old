@@ -41,7 +41,7 @@ blockquote {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 90%, from(#ffa), to(#ff));
   background-image: -moz-linear-gradient(#ff9 0%, #ff6 90%);
   -webkit-box-shadow: #aaa 0px 4px 4px;
-  -moz-box-shadow: #aaa 0px 4px 4px; /* FF 3.5+ */}
+  -moz-box-shadow: #aaa 0px 4px 4px; /* FF 3.5+ */
 }
 
 pre {
