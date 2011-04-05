@@ -1,6 +1,6 @@
 # Vagrant
 
->Vagrant is a tool for building and distributing virtualized development environments.
+> [Vagrant](http://vagrantup.com/) is a tool for building and distributing virtualized development environments.
 
 ## Pre-requisites
 
@@ -77,3 +77,17 @@ In the root of your project's directory you'll find `Vagrantfile`. This file con
 	Vagrant::Config.run do |config|
 	  config.vm.box = "base"
 	end
+	
+## Sharing Folders
+
+Make my `~/Downloads` folder on the Mac available as `/downloads` on the guest OS:
+
+	config.vm.share_folder "downloads", "/downloads", "/Users/brian/Downloads"
+	
+## Port Forwarding
+
+You can forward ports from your host OS to the guest OS:
+
+	config.vm.forward_port("weblogic", 80, 8080)
+
+This means on your host OS, going to http://localhost/ would forward you to 8080 on the guest OS.
