@@ -1,7 +1,8 @@
 body, td, th {
   font-size: large;
   font-family: "calluna-1","calluna-2", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
-  background: #eee;
+  background:url(http://www.buildndeploy.com/themes/back_to_school/bg.jpg) top center fixed no-repeat #ccc;
+
   color: #000;
   vertical-align: top;
 }
@@ -29,12 +30,14 @@ h5 {
 blockquote {
   font-style: italic;
   margin: 0;
-  background: #efe;
-  padding: 4px;
+  padding: 1px 1em;
+  background: yellow;
+  border-right: 1px solid #cc0;
+  border-bottom: 1px solid #cc0;
 }
 
 pre {
-	background: #ddd;
+	background: #eee;
 	color: #000;
     border: 1px dashed #aaa;
 	padding: 0;
@@ -65,11 +68,11 @@ dd {
 }
 
 #main {
+  background:url(http://www.buildndeploy.com/themes/back_to_school/grid.gif) repeat #fff;
   width: 800px;
   margin: auto;
   margin-top: 1em;
   margin-bottom: 1em;
   padding: 0 1em;
-  background: #fff;
   border: 1px solid #ccc;
 }
