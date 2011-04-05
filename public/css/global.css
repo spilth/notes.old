@@ -38,8 +38,8 @@ blockquote {
   width: 33%;
   float: right;
 
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 90%, from(#ffa), to(#ff));
-  background-image: -moz-linear-gradient(#ff9 0%, #ff6 90%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffa), to(#ff6));
+  background-image: -moz-linear-gradient(top, #ff9, #ff6);
   -webkit-box-shadow: #aaa 0px 4px 4px;
   -moz-box-shadow: #aaa 0px 4px 4px; /* FF 3.5+ */
 }
