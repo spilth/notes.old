@@ -1,6 +1,9 @@
 <html>
   <head>
-	<title>Notes</title>
+	<title><%= @topic %> Notes</title>
+	<meta name="description" content="Notes about <%= @topic %>" />
+	<meta name="keywords" content="<%= @topic %>" />
+	
 	<link rel="stylesheet" type="text/css" href="/css/global.css" />
 	<script type="text/javascript" src="http://use.typekit.com/rqw5jrt.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -45,7 +48,7 @@
 			</script>
 			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 			<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-		<% end %>
+		<% end %>		
 	</div>
   </body>
 
