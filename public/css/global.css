@@ -29,10 +29,11 @@ h5 {
 }
 
 blockquote {
+  font-size: 1.4em;
   font-family: "reenie-beanie-1","reenie-beanie-2";
   margin: 0 0 1em 1em;
   padding: 1px 1em;
-  background: yellow;
+  background: #ff6;
   border-right: 1px solid #cc0;
   border-bottom: 1px solid #cc0;
   width: 33%;
