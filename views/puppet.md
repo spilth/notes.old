@@ -126,9 +126,11 @@ Defined Resource Types look like a way to create a function with arguments that 
 	svn_repo { puppet_repo: path => '/var/svn_puppet' }
 	svn_repo { other_repo:  path => '/var/svn_other' }
 
-## Modules
+## Templates
 
-Modules combine classes, defined types and resources into re-usable configurations.
+## Modules (Puppet 0.22.2+)
+
+Modules are collections of classes, defined types, resources and templates into re-usable configurations.
 
 ## Nodes
 
