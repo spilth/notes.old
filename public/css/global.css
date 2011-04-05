@@ -13,6 +13,7 @@ h1 {
 
 h2 {
   border-bottom: 2px solid #000;
+  clear: both;
 }
 
 h3 {
@@ -29,11 +30,13 @@ h5 {
 
 blockquote {
   font-style: italic;
-  margin: 0;
+  margin: 0 0 1em 1em;
   padding: 1px 1em;
   background: yellow;
   border-right: 1px solid #cc0;
   border-bottom: 1px solid #cc0;
+  width: 33%;
+  float: right;
 }
 
 pre {
@@ -42,7 +45,7 @@ pre {
     border: 1px dashed #aaa;
 	padding: 0;
 	margin: 0;
-	width: 100%;
+	nowidth: 100%;
 	overflow: auto; /*--If the Code exceeds the width, a scrolling is available--*/
 	overflow-Y: hidden;  /*--Hides vertical scroll created by IE--*/
 	overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not ??? */
