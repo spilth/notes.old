@@ -42,6 +42,9 @@ pre {
 	width: 100%;
 	overflow: auto; /*--If the Code exceeds the width, a scrolling is available--*/
 	overflow-Y: hidden;  /*--Hides vertical scroll created by IE--*/
+	overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not ??? */
+	white-space: pre-wrap; /* css-3 */
+	white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
 }
 
 code {
