@@ -29,7 +29,7 @@ h5 {
 }
 
 blockquote {
-  font-style: italic;
+  font-family: "tk-blambot-casual";
   margin: 0 0 1em 1em;
   padding: 1px 1em;
   background: yellow;
@@ -47,15 +47,20 @@ blockquote {
 pre {
 	background: #eee;
 	color: #000;
-    border: 1px dashed #aaa;
+
 	padding: 0;
 	margin: 0;
-	nowidth: 100%;
 	overflow: auto; /*--If the Code exceeds the width, a scrolling is available--*/
 	overflow-Y: hidden;  /*--Hides vertical scroll created by IE--*/
 	overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not ??? */
 	white-space: pre-wrap; /* css-3 */
 	white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+	
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fafafa));
+  background-image: -moz-linear-gradient(top, #fff, #fafafa);
+  -webkit-box-shadow: #ccc 0px 2px 2px;
+  -moz-box-shadow: #aaa 0px 2px 2px; /* FF 3.5+ */
+  
 }
 
 code {
@@ -80,10 +85,10 @@ dd {
   width: 800px;
   margin: auto;
   margin-top: 1em;
-  margin-bottom: 1em;
+  margin-bottom: em;
   padding: 0 1em;
   border: 1px solid #ccc;
-  -webkit-box-shadow: #333 0px 4px 4px;
-  -moz-box-shadow: #333 0px 4px 4px; /* FF 3.5+ */}
+  -webkit-box-shadow: #333 0px 3px 3px;
+  -moz-box-shadow: #333 0px 3px 3px; /* FF 3.5+ */}
 
 }
