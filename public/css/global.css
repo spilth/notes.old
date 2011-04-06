@@ -81,6 +81,12 @@ dd {
   margin-bottom: 0.5em;
 }
 
+#navigation {
+	font-size: 0.8em;
+	text-align: right;
+	margin-top:0.5em;
+}
+
 #main {
   background:url(http://www.buildndeploy.com/themes/back_to_school/grid.gif) repeat #fff;
   width: 800px;
