@@ -113,6 +113,27 @@ If the `version` property contains the string `SNAPSHOT`, Maven will replace thi
 
 > When releasing a project, you should resolve all dependencies on SNAPSHOT versions to dependencies on released versions.
 
+## Build Profiles
+
+### Specify the Build Profile via Command Line Options
+
+You can set the current profile to build with using the `-activate-profile` or `-P` command-line switches:
+
+	$ mvn compile -P <profileId>
+	$ mvn test -activate-profiles local
+
+### Specify the Build Profile via User's Settings File
+
+
+You can set a default build profile using the `activeProfiles` element inside of `~/.m2/settings.xml`:
+
+	<settings>
+	  <!-- other stuff -->
+	  <activeProfiles>
+	    <activeProfile>local</activeProfile>
+	  </activeProfiles>
+	</settings>
+
 ## Resources
 
 * [Maven: The Complete Reference](http://sonatype.com/books/mvnref-book/reference/public-book.html)
