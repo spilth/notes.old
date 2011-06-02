@@ -41,6 +41,11 @@ Create `.gitignore` and add file and directory globs:
 ### Stage Files for Committing
 
 	$ git add foo.txt
+	$ git add bar.txt
+
+### Unstage a File
+
+	$ git reset HEAD bar.txt
 
 ### See Differences of Staged Files
 
