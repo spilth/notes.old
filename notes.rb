@@ -61,7 +61,6 @@ end
 
 get '/:topic' do
   @topic = params[:topic]
-  @log = `git log views/#{@topic}.md`
   
   markdown params[:topic].to_sym
 end
