@@ -80,3 +80,22 @@ Create `.gitignore` and add file and directory globs:
 ### Push to a Remote Repository
 
 	$ git push <remoteName> <branchName>
+	
+### Pushing to Multiple Remote Repositories at Once
+
+If you want to push to multiple remote repositories using a single name you can first add the two remotes separately and then end `.git/config` to add a third remote that combines both of them together:
+
+	[remote "heroku"]
+		url = git@heroku.com:bnd-notes.git
+		fetch = +refs/heads/*:refs/remotes/heroku/*
+	[remote "github"]
+		url = git@github.com:buildndeploy/notes.git
+		fetch = +refs/heads/*:refs/remotes/github/*
+	[remote "external"]
+	    url = git@github.com:buildndeploy/notes.git
+		url = git@heroku.com:bnd-notes.git
+		fetch = +refs/heads/*:refs/remotes/heroku/*
+
+Then you can update them with a single command:
+
+	$ git push external
