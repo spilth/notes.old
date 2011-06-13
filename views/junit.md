@@ -55,21 +55,17 @@ If a method taking too much time is a measurement of failure, use the `timeout` 
 		//...
 	}
 
-<!--
 ## Fixtures
 
-Sometimes you have common code that needs to be run before each method is called, such as setting up a Collection or objects that are re-used in multiple tests.
+Sometimes you have common code that needs to be run before each test method is called, such as setting up objects to use in multiple tests. To help remove duplicate code you can annotate non-test methods with `@Before` to have those methods run before each test method. If the objects created in the `@Before` method(s) have resources that need to be released you can create a non-test method annotated with @After to accomplish that.
 
-### @Before & @After
+Note that if multiple methods are annotated as `@Before` or `@After` that there is no guarantee that one method will be called before the other.
 
-Note that if multiple methods are annotated as @Before or @After that there is no guarantee that one method will be called before the other.
-
-### @BeforeClass & @AfterClass
--->
+If the setup you need to perform is resource heav then you can put your code in a `public static void` method with no arguments and annotate it with `@BeforeClass`. Like `@Before`, `@BeforeClass` has a partner annotation named `@AfterClass`
 
 ## Ignoring Tests
 
-Sometimes you need to ignore a test for some reason.  `@Ignore` Can be applied to entire class or individual methods.
+Sometimes you need to ignore a test for some reason. `@Ignore` Can be applied to entire class or individual methods.
 
 	@Ignore("not ready yet")
 	@Test
