@@ -85,3 +85,5 @@ If you want to use JUnit 4 in a Maven project, add the following to your `pom.xm
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+The `test` value for scope indicates that JUnit is only used for the compilation and execution of tests.
