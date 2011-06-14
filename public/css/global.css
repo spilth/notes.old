@@ -8,16 +8,18 @@ body, td, th {
 }
 
 h1 {
+  font-size: 2.0em;
   text-align: center;
 }
 
 h2 {
-  border-bottom: 2px solid #000;
+  font-size: 1.7em;
   clear: both;
+  border-bottom: 2px solid #000;
 }
 
 h3 {
-  border-bottom: 1px solid #000;
+  font-size: 1.3em;
 }
 
 h4 {
@@ -48,11 +50,12 @@ blockquote {
 
 pre {
 	clear: both;
-	background: #eee;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#efefef), to(#ececec));
-	background-image: -moz-linear-gradient(top, #efefef, #ececec);
+	background: #000;
+	color: #ccc;
+	
+	//background-image: -webkit-gradient(linear, left top, left bottom, from(#efefef), to(#ececec));
+	//background-image: -moz-linear-gradient(top, #efefef, #ececec);
 
-	color: #000;
 	padding: 0;
 	margin: 0;
 	overflow: auto; /*--If the Code exceeds the width, a scrolling is available--*/
