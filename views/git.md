@@ -58,7 +58,37 @@ Create `.gitignore` and add file and directory globs:
 ### Revert a Changed File
 
 	$ git checkout name/of/file
+
+## Branching
+
+### Create a Branch
+
+	$ git branch <branchName>
+
+### List Branches
+
+	$ git branch
+
+### Switch to a Branch
+
+	$ git checkout <branchName>
+
+### Switch back to master Branch
+
+	$ git checkout master
+
+### Merge changes from another Branch
+
+	$ git merge <branchName>
 	
+### Delete a Branch if differences have been merged into current branch
+
+	$ git branch -d <branchName>
+
+### Delete Branch regardless
+
+	$ git branch -D <branchName>
+
 ## Remote Repositories
 
 ### Show List of Remote Repositories
