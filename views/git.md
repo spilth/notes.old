@@ -99,7 +99,7 @@ Create `.gitignore` and add file and directory globs:
 
 	$ git remote add <remoteName> <url>
 	
-### Remote a Remote Repository
+### Remove a Remote Repository
 
 	$ git remote rm <remoteName>
 	
