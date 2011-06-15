@@ -65,9 +65,17 @@ Create `.gitignore` and add file and directory globs:
 
 	$ git branch <branchName>
 
-### List Branches
+### List Local Branches
 
 	$ git branch
+	
+### List Remote Branches
+
+	$ git branch -r
+
+### List Local and Remote Branches
+
+	$ git branch -a
 
 ### Switch to a Branch
 
@@ -81,11 +89,20 @@ Create `.gitignore` and add file and directory globs:
 
 	$ git merge <branchName>
 	
+### Rename a Branch
+
+	$ git branch -m <currentName> <newName>
+
+### Force Rename of Branch
+
+	$ git branch -M <currentName> <newName>
+
+	
 ### Delete a Branch if differences have been merged into current branch
 
 	$ git branch -d <branchName>
 
-### Delete Branch regardless
+### Force Deletion of Branch
 
 	$ git branch -D <branchName>
 
