@@ -65,10 +65,22 @@ Create `.gitignore` and add file and directory globs:
 
 	$ git branch <branchName>
 
+### Switch to a Branch
+
+	$ git checkout <branchName>
+
+### Create and Switch to Branch
+
+	$ git checkout -b <branchName>
+
+### Switch back to master Branch
+
+	$ git checkout master
+
 ### List Local Branches
 
 	$ git branch
-	
+
 ### List Remote Branches
 
 	$ git branch -r
@@ -76,14 +88,6 @@ Create `.gitignore` and add file and directory globs:
 ### List Local and Remote Branches
 
 	$ git branch -a
-
-### Switch to a Branch
-
-	$ git checkout <branchName>
-
-### Switch back to master Branch
-
-	$ git checkout master
 
 ### Merge changes from another Branch
 
@@ -97,7 +101,6 @@ Create `.gitignore` and add file and directory globs:
 
 	$ git branch -M <currentName> <newName>
 
-	
 ### Delete a Branch if differences have been merged into current branch
 
 	$ git branch -d <branchName>
