@@ -105,6 +105,11 @@ Create `.gitignore` and add file and directory globs:
 ### Force Deletion of Branch
 
 	$ git branch -D <branchName>
+	
+## Delete Remote Branch
+
+	$ git branch -d -r <remoteName>/<branchName>
+	$ git push <remoteName> :<branchName>
 
 ## Remote Repositories
 
