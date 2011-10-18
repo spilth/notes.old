@@ -154,3 +154,11 @@ If you want to push to multiple remote repositories using a single name you can 
 Then you can update them with a single command:
 
 	$ git push external
+
+## Stashes
+
+	git stash / git stash save
+	git stash list
+	git stash apply <stash>
+	git stash apply stash@{0}
+	git stash pop
