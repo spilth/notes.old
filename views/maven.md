@@ -17,15 +17,49 @@ Once you're done editing you can run the following command to immediately execut
 
     $ source ~/.profile
 
+## Maven Coordinates
+
+Wether you are creating a new Maven project from scratch, joining a Maven project or referencing a Maven project you will need 3 pieces of information to identify the project:
+
+* `groupId`: Represents the group the project belongs to. This is generally a reverse domain name like most Java packages use. This value will likely not change over the course of your project's development. Example:
+* `artifactId`: The name of your project. This needs to be unique within the groupId you provided above. This value will also not change over time. Example: `helloworld`
+* `version`: Represents the version of your application and usually done in an X.Y.Z type format. Version will change over time if your project goes through several releases and updates. You will also often see the word SNAPSHOT in the version property. This represents a project being in a development state and not being a stable, released version yet. Example: `1.0-SNAPSHOT`
+
 ## Creating Maven Projects
 
+There are a few ways you can create a Maven project, including by hand, but the easiest method is to use the Archetype plugin.
+
 ### Create a Maven Project Using Archetypes Interactively
+
+To be walked through the creation of a project, use the `achetype:generate` plugin and goal. This will prompt you for your projects coordinates and then generate a `pom.xml`.
 
 	$ mvn archetype:generate
 
 ### Create a Maven Project Using Archetypes Non-interactively
 
 	$ mvn archetype:generate -DgroupId=com.example -DartifactId=hello -Dversion=1.0-SNAPSHOT -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+## Dependencies
+
+Most Java project rely on libraries for some of their functionality, usually require at compilation and run-time, but sometimes just during testing. Sometimes the library is necessary for compilation but doesn't need to be packaged with the project since it will be provided by the container (such as Tomcat) that it will end up running in.
+
+Maven provides a mechanism with which to define these dependencies and the scope of their usage. They are defined in the `<dependencies>` section of your project's `pom.xml`. For example, in order to depend on JUnit 4 during testing of your project, put the following in your POM:
+	
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+The `groupId`, `artifactId` and `version` are the coordinates of the project you need and the `scope` attribute identifies how the dependency will be used.
+
+Scope can have one of the following values:
+
+* foo
+* bar
 
 ## Use a Hosted Repository as a Mirror
 
