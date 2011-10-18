@@ -35,3 +35,15 @@ Then reload your `~/.profile` for the changes to take effect
 	$ rvm gemset export system.gems
 	$ rvm 1.8.7
 	$ rvm gemset import system
+
+### List Installed Rubies
+
+	$ rvm list
+	
+### Show Default Ruby
+
+	$ rvm list default
+	
+### List Known Installable Rubies
+
+	$ rvm list known
