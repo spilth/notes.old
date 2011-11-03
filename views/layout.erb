@@ -1,12 +1,13 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+	<meta charset="utf-8">
 	<title><%= @topic %> Notes</title>
 	<meta name="description" content="Notes about <%= @topic %>" />
 	<meta name="keywords" content="<%= @topic %>" />
 	
-	<link rel="stylesheet" type="text/css" href="/css/global.css" />
-	<script type="text/javascript" src="http://use.typekit.com/gxl3ako.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/notes.css" />
 	
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
@@ -24,10 +25,26 @@
 
   <body>
 
-	<div id="main">
-		<div id="navigation">
-	    	&nbsp;<% if (@topic) then %><a href="<%= @topic %>/source">View Markdown Source</a> | <a href="/">Home</a><% end %>
-		</div>
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="/">Notes</a>
+
+          <ul class="nav">
+            <li class="active"><a href="/">Topics</a></li>
+            <li><a href="about">About</a></li>
+            <li><a href="http://www.buildndeploy.com">Build &amp; Deploy</a></li>
+          </ul>
+			<% if (@topic) then %>
+				<p class="pull-right"><a href="<%= @topic %>/source">View Markdown Source</a></p>
+			<% end %>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="content">
 		<%= yield %>
 
 		<% if (@topic) then %>
@@ -49,8 +66,8 @@
 			</script>
 			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 			<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-		<% end %>		
-
+		<% end %>
+		</div>
 	</div>
 
   </body>
