@@ -1,6 +1,6 @@
 # How This Site Is Generated and Hosted
 
-This site is a [Sinatra](http://www.sinatrarb.com/) application running at [Heroku](http://heroku.com/). I'm using [Markdown](http://daringfireball.net/projects/markdown/) to create my notes and using [DNSimple](https://dnsimple.com/) to register and manage the domain `buildndeploy.com`. The beautiful font is provided by [typekit](http://typekit.com/).
+This site is a [Sinatra](http://www.sinatrarb.com/) application running at [Heroku](http://heroku.com/). I'm using [Markdown](http://daringfireball.net/projects/markdown/) to create my notes and using [DNSimple](https://dnsimple.com/) to register and manage the domain `buildndeploy.com`. The beautiful layout and styling is provided by [Bootstrap, from Twitter](http://twitter.github.com/bootstrap/).
 
 The goal of this app is to be able to make notes about various technologies and generate a web site that I can reference and quickly update and expand. The process of creating a new Markdown file should result in a new page showing up on the site.  Below are instructions for how I set up the site.
 
