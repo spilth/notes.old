@@ -28,6 +28,10 @@ Then reload your `~/.profile` for the changes to take effect
  
 	$ rvm --default 1.9.2
 
+### Show Default Environment
+
+	$ rvm list default
+
 ### Replace System Ruby with an RVM-managed version
 
 	$ rvm install 1.8.7
